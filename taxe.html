@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- importation angular js-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="taxe.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <h2>Calculateur de prix</h2>
+        <p>Prix du produit : <input type="number" ng-model="price"></p>
+        <p>Quantité : <input type="number" ng-model="quantity"></p>
+        <p>Taux de TVA : <input type="number" ng-model="taxRate"></p>
+        <button ng-click="calculate()">Calculer</button>
+        <hr>
+        <p ng-if="totalPrice">Prix total : {{ totalPrice }} €</p>
+        <p ng-if="taxAmount">Montant de la TVA : {{ taxAmount }} €</p>
+        <p ng-if="totalAmount">Montant total à payer : {{ totalAmount }} €</p>
+      </div>
+      
+</body>
+</html>
