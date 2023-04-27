@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html ng-app="">
+<html >
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
 <body >
-<div >
+<div ng-app="app" ng-controller="ctrl">
 <p>Nom: <input type="text" ng-model="name"></p>
 <p ng-bind="name"></p>
 calculer avec angular js 5+5=?
@@ -14,9 +14,17 @@ calculer avec angular js 5+5=?
 
 Prix unitaire<input type="number" min="1" ng-model="prix"><br>
 Quantité<input type="number" min="1" ng-model="quantite"><br>
-Prix total: {{prix * quantite}}
+Prix total: {{ prix * quantite }}
 
 </div>
 </body>
+<script>
+    // initialisation de prix et quantité dans un controller
+    var app = angular.module('app', []);
+    app.controller('ctrl', function($scope) {
+        $scope.prix = 1;
+        $scope.quantite = 1;
+    });
 
+</script>
 </html>
