@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- importation de angular js-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- formulaire angular js avec nom complet et une case à cocher (urgent)
+un champs durée >= 1
+ -->
+<div ng-app="" >
+    <form name="myForm">
+        <p>Prénom: <input type="text" ng-model="firstName" required></p>
+        <p>Nom: <input type="text" ng-model="lastName" required></p>
+        <p>le nom complet: {{firstName + " " + lastName}}</p>
+        <p>urgent: <input type="checkbox" ng-model="urgent" ng-init="urgent=false"></p> <!--facultatif parceque les checkbox sont par défaut false-->
+        <p>durée: <input type="number" ng-model="duree" min="1"></p>
+        <p ng-if="urgent">
+            Motif<br>
+            <textarea placeholder="motif" name="raison" ng-model="motif">
+
+            </textarea>
+        </p>
+        <p><input type="submit" ng-disabled="myForm.$invalid"></p>
+    </form>
+
+
+</div>
+
+</body>
+</html>
