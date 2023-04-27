@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- importation de angular js-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    <!-- formulaire de calcule de imc angular js-->
+    <div ng-app="Myapp" ng-controller="myCtrl">
+        <form>
+            <label for="weight">poids en kg:</label>
+            <input type="number" id="weight" ng-model="weight" placeholder="votre poids ici">
+            <br>
+            <label for="height">taille en m:</label>
+            <input type="number" id="height" ng-model="height" placeholder="votre taille ici">
+            <br>
+            <input type="button" value="calculer" ng-click="calculate()">
+            <br>
+            <label for="imc">IMC:</label>
+            {{imc}}
+            <br>
+            <label for="result">résultat:</label>
+            {{result}}
+        </form>
+</body>
+<script>
+    var app=angular.module("Myapp",[]); //creation de module
+    app.controller("myCtrl",function($scope){ //creation de controller
+        $scope.calculate=function(){ //creation de fonction de calcule d'imc
+            $scope.imc=Math.round($scope.weight/($scope.height**2)) //calcule d'imc
+           // ** est l'opérateur de puissance 
+            if($scope.imc<18.5){
+                $scope.result="insuffisance pondérale";
+            }
+            else if( $scope.imc<=25){
+                $scope.result="poids normal";
+            }
+            else if($scope.imc<30){
+                $scope.result="surpoids";
+            }
+            else if( $scope.imc<35){
+                $scope.result="obésité modérée";
+            }
+            else if($scope.imc<40){
+                $scope.result="obésité sévère";
+            }
+            else if($scope.imc>=40){
+                $scope.result="obésité morbide";
+            }
+        }
+    });
+    </script>
+</html>
