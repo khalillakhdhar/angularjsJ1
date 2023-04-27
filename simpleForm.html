@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- importation de angular js-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    <!-- création de formulaire d'inscription angular js avec control HTML 5 nom, prenom age redoublement (oui ou non) radio une case à cocher j'ai lu et accepte et un bouton submit-->
+    <div ng-app="Myapp" ng-controller="myCtrl">
+        <form name="myForm">
+            <p>Prénom: <input type="text" pattern="[A-Z a-z]{2,30}" name="firstName" ng-model="firstName" required>
+            <!--verification de l'input firstName-->
+            <span ng-if="myForm.firstName.$invalid && myForm.firstName.$touched"> veuillez saisir votre prénom correcte</span>
+            </p>
+
+            <p>Nom: <input type="text" pattern="[A-Z a-z]{2,30}" ng-model="lastName" name="lastName" required>
+                <span ng-if="myForm.lastName.$invalid  && myForm.lastName.$touched"> veuillez saisir votre nom</span>
+
+            </p>
+            <p>le nom complet: {{firstName + " " + lastName}}</p>
+
+            <p>Age: <input type="number" ng-model="age" name="age" min="18" max="30"></p>
+            <span ng-if="myForm.age.$invalid"> veuillez saisir un age entre 18 et 30</span>
+
+            <p>Redoublement: <input  type="radio" ng-model="redoublement" value="oui">oui
+                 <input type="radio"  ng-checked="true" ng-model="redoublement" value="non">non</p>
+                
+            <p>J'ai lu et accepte: <input required type="checkbox" ng-model="accepte" ng-init="accepte=false"></p>
+            <p><input type="submit" ng-disabled="myForm.$invalid"></p>
+        </form>
+</body>
+<script>
+    var app = angular.module('Myapp', []);
+    app.controller('myCtrl', function($scope) {
+      
+    });
+</script>
+</html>
