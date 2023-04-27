@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- importation de angular js-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="">
+    Affichage conditionelle:<input type="checkbox" ng-model="myVar" ng-init="myVar=true">
+    <div ng-if="myVar">
+        <h1>Bienvenu</h1>
+        <p>mon paragraphe1</p>
+    </div>
+    <div ng-if="!myVar">
+        <h1>au revoir</h1>
+        <p>mon paragraphe 2</p>
+    </div>
+    <input type="number" ng-model="age" ng-init="age=1" placeholder="votre age ici">
+    <p ng-if="age>=18">
+        <a href="#">accéder au site</a>
+    </p>
+    
+</body>
+</html>
