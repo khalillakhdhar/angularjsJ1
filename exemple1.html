@@ -12,7 +12,7 @@
     <p>
         changement dynamique des nom avec angular js
     </p>
-    <div ng-app="Myapp">
+    <div ng-app="Myapp" ng-controller="myCtrl">
         <p>Prénom: <input type="text" ng-model="firstName"></p> <!--camelCase-->
         <p>Nom: <input type="text" ng-model="lastName"></p>
         <p> le nom complet: {{firstName + " " + lastName}}</p>

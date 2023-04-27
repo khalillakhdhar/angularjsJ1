@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    <!--importation de angular js-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- formulaire angular js avec age et nom initialisé à khalil et 18-->
+    <div ng-app="App" ng-controller="myCtrl" ng-init="firstName='khalil';age=18">
+        <h2>Bienvenu à {{titre}}</h2>
+        <p>Prénom: <input type="text" ng-model="firstName"></p>
+        <p>Age: <input type="number" ng-model="age"></p>
+        <p>le nom complet: {{firstName}}</p>
+        <p>l'age: {{age}}</p>
+        
+        <!-- affichage mineur ou majeur selon l'age-->
+        <p>
+            majeur : <span ng-show="age>=18">oui</span>
+            <span ng-hide="age>=18">non</span>
+            mineur : <span ng-show="age<18">oui</span>
+            <span ng-hide="age<18">non</span>
+        </p>
+        {{firstName + " " + age}}
+    </div>
+    
+</body>
+<script>
+    var app=angular.module("App",[]); // déclaration obligatoire de l'application si le nom # ""
+    // declaration du controller
+    app.controller("myCtrl",function($scope){
+       $scope.titre="mon application angular js"
+    });
+    </script>
+</html>
