@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<body >
+<div >
+<p>Nom: <input type="text" ng-model="name"></p>
+<p ng-bind="name"></p>
+calculer avec angular js 5+5=?
+{{ 5 + 5 }}
+<br> utiliser de booléene avec angular js (12>15)
+{{ 12>15 }}
+<br>
+
+Prix unitaire<input type="number" min="1" ng-model="prix"><br>
+Quantité<input type="number" min="1" ng-model="quantite"><br>
+Prix total: {{prix * quantite}}
+
+</div>
+</body>
+
+</html>

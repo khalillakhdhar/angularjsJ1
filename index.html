@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+// lire le nom et l'afficher dans la page
+// 1. recuperer le nom
+// 2. afficher le nom dans la page
+function afficherNom(){
+    // 1. recuperer le nom
+    var nom = document.getElementById("nom").value;
+    // 2. afficher le nom dans la page
+    document.getElementById("affichage").innerHTML = nom;
+}
+
+
+    </script>
+</head>
+<body>
+    Nom:
+    <input type="text" onchange="afficherNom()" name="nom" id="nom">
+    <br>
+    <button onclick="afficherNom()">afficher le nom</button>
+    <p id="affichage"></p>
+</body>
+</html>
